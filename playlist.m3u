@@ -1,111 +1,53 @@
 #EXTM3U x-tvg-url="https://raw.githubusercontent.com/AqFad2811/epg/main/epg.xml" url-tvg="https://raw.githubusercontent.com/AqFad2811/epg/main/compressed/epg.xml.gz" refresh="1440" max-conn="1"
 
 #EXTINF:-1 group-title="siaranMy" tvg-id="TV1" tvg-name="TV1" tvg-logo="https://mifntechnology.github.io/siaranMy/logo/Tv1.png",TV1
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
 #EXTVLCOPT:http-referrer=https://rtmklik.rtm.gov.my/
 https://mifntechnology.github.io/siaranMy/channels/Tv1/index.m3u8
 
 #EXTINF:-1 group-title="siaranMy" tvg-id="TV2" tvg-name="TV2" tvg-logo="https://mifntechnology.github.io/siaranMy/logo/Tv2.png",TV2
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
 #EXTVLCOPT:http-referrer=https://rtmklik.rtm.gov.my/
 https://mifntechnology.github.io/siaranMy/channels/Tv2/index.m3u8
 
 #EXTINF:-1 group-title="siaranMy" tvg-id="TV3" tvg-name="TV3" tvg-logo="https://mifntechnology.github.io/siaranMy/logo/Tv3.png",TV3
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
 #EXTVLCOPT:http-referrer=https://www.tonton.com.my/
-https://tonton-live.akamaized.net/hls/live/2043564/tv3/master.m3u8
+https://mifntechnology.github.io/siaranMy/channels/Tv3/index.m3u8
 
 #EXTINF:-1 group-title="siaranMy" tvg-id="TVAlhijrah" tvg-name="TVAlhijrah" tvg-logo="https://mifntechnology.github.io/siaranMy/logo/TvAlhijrah.png",TV Alhijrah
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
 #EXTVLCOPT:http-referrer=https://www.mana2.my/
 https://live.mana2.my/TvAlhijrah/index.m3u8
 
 #EXTINF:-1 group-title="siaranMy" tvg-id="OKEY" tvg-name="OKEY" tvg-logo="https://mifntechnology.github.io/siaranMy/logo/OkeyTv.png",Okey TV
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
 #EXTVLCOPT:http-referrer=https://rtmklik.rtm.gov.my/
 https://mifntechnology.github.io/siaranMy/channels/TvOkey/index.m3u8
 
 #EXTINF:-1 group-title="siaranMy" tvg-id="TV6" tvg-name="TV6" tvg-logo="https://mifntechnology.github.io/siaranMy/logo/Tv6.png",TV6
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
 #EXTVLCOPT:http-referrer=https://rtmklik.rtm.gov.my/
 https://mifntechnology.github.io/siaranMy/channels/Tv6/index.m3u8
 
-#EXTINF:-1 group-title="siaranMy" tvg-id="DidikTVKPM" tvg-name="DidikTVKPM" tvg-logo="https://mifntechnology.github.io/siaranMy/logo/DidikTv.png",DidikTV KPM
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
-#EXTVLCOPT:http-referrer=https://www.tonton.com.my/
-https://tonton-live.akamaized.net/hls/live/2043565/ntv7/master.m3u8
-
-#EXTINF:-1 group-title="siaranMy" tvg-id="8TV" tvg-name="8TV" tvg-logo="https://mifntechnology.github.io/siaranMy/logo/8tv.png",8TV
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
-#EXTVLCOPT:http-referrer=https://www.tonton.com.my/
-https://tonton-live.akamaized.net/hls/live/2043566/8tv/master.m3u8
-
 #EXTINF:-1 group-title="siaranMy" tvg-id="TV9" tvg-name="TV9" tvg-logo="https://mifntechnology.github.io/siaranMy/logo/Tv9.png",TV9
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
 #EXTVLCOPT:http-referrer=https://www.tonton.com.my/
-https://tonton-live.akamaized.net/hls/live/2043567/tv9/master.m3u8
+https://live-ssar-02.tonton.com.my/1773137950/bd28ffb014fa282c68db6f60fabec89dc8a64edf69f48c293a34758889950fc1/tv9/master.m3u8?bpkio_serviceid=6c0958d82a830a026ba9f8eeb79ede62&did=79b00b12-6a77-4424-5e76-2ced2d51e1ec&dnt=0&ifatype=sessionid&plt=web&lot_auds=&ttd_uid2=A4AAACx19Cup1dLf_pFtbHX1acGf13TYVWAVBcsIMaHgTbodVuMf5Lm43m0O3iDkk7XkkjcET_BQJV2D8mGQxi-GZRKdgZ-SRb-qVU1o0AiLvKMqUhcNbnY5ETKN_x31Sm1MneG2BLx3HBhXAfnyYaAVkS4DaceUAEyajynsw2jiD0jvI8_Jc7Zn6pEuZGjTAx1OqpAJa8J7EHHGa2uencSdQA&bpkio_sessionid=10f3b5b25-4d46b1cc-3b25-4ce4-b352-67f739876fef&category=all
 
 #EXTINF:-1 group-title="siaranMy" tvg-id="TVS" tvg-name="TVS" tvg-logo="https://mifntechnology.github.io/siaranMy/logo/Tvs.png",TVS
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
-#EXTVLCOPT:http-referrer=https://www.rtmklik.rtm.gov.my/
-https://tvslive.akamaized.net/hls/live/2042785/tvs/master.m3u8
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
+#EXTVLCOPT:http-referrer=https://www.mana2.my/
+https://live.mana2.my/TvS/index.m3u8
 
 #EXTINF:-1 group-title="siaranMy" tvg-id="AstroAwani" tvg-name="AstroAwani" tvg-logo="https://mifntechnology.github.io/siaranMy/logo/AstroAwani.png",Astro Awani
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
 #EXTVLCOPT:http-referrer=https://www.astroawani.com/
 https://mifntechnology.github.io/siaranMy/channels/AstroAwani/index.m3u8
-
-#EXTINF:-1 group-title="siaranMy" tvg-id="BERITARTM" tvg-name="BERITARTM" tvg-logo="https://mifntechnology.github.io/siaranMy/logo/BeritaRtm.png",BERITA RTM
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
-#EXTVLCOPT:http-referrer=https://rtmklik.rtm.gov.my/
-https://mifntechnology.github.io/siaranMy/channels/BeritaRTM/index.m3u8
-
-#EXTINF:-1 group-title="siaranMy" tvg-id="TVSUKAN" tvg-name="TVSUKAN" tvg-logo="https://mifntechnology.github.io/siaranMy/logo/SukanRtm.png",SUKAN RTM
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
-#EXTVLCOPT:http-referrer=https://rtmklik.rtm.gov.my/
-https://mifntechnology.github.io/siaranMy/channels/SukanRTM/index.m3u8
-
-#EXTINF:-1 group-title="siaranMy" tvg-id="BernamaTV" tvg-name="BernamaTV" tvg-logo="https://mifntechnology.github.io/siaranMy/logo/Bernama.png",Bernama TV
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
-#EXTVLCOPT:http-referrer=https://www.rtmklik.rtm.gov.my/
-https://rtm-live.akamaized.net/hls/live/2022312/bernama/master.m3u8
 
 #EXTINF:-1 group-title="radio" tvg-id="Hot FM" tvg-name="Hot Fm" tvg-logo="https://mifntechnology.github.io/siaranMy/logo/HotFm.png",Hot Fm
 https://mifntechnology.github.io/siaranMy/radio/HotFm/playlist.m3u8
 
-#EXTINF:-1 group-title="radio" tvg-id="Best FM" tvg-name="Best Fm" tvg-logo="https://mifntechnology.github.io/siaranMy/logo/bestfm.png",Best Fm
-https://mifntechnology.github.io/siaranMy/radio/BestFm/playlist.m3u8
-
-#EXTINF:-1 group-title="radio" tvg-id="Kool FM" tvg-name="Kool 101" tvg-logo="https://mifntechnology.github.io/siaranMy/logo/Kool101.png",Kool 101
-https://mifntechnology.github.io/siaranMy/radio/BuletinFm/playlist.m3u8
-
-#EXTINF:-1 group-title="radio" tvg-id="ERA" tvg-name="Era" tvg-logo="https://mifntechnology.github.io/siaranMy/logo/Era.png",Era
-https://mifntechnology.github.io/siaranMy/radio/Era/playlist.m3u8
-
-#EXTINF:-1 group-title="radio" tvg-id="Fly FM" tvg-name="Fly Fm" tvg-logo="https://mifntechnology.github.io/siaranMy/logo/FlyFm.png",Fly Fm
-https://mifntechnology.github.io/siaranMy/radio/FlyFm/playlist.m3u8
-
-#EXTINF:-1 group-title="radio" tvg-id="Hitz FM" tvg-name="Hitz Fm" tvg-logo="https://mifntechnology.github.io/siaranMy/logo/HitzFm.png",Hitz Fm
-https://mifntechnology.github.io/siaranMy/radio/HitzFm/playlist.m3u8
-
-#EXTINF:-1 group-title="radio" tvg-id="Johor FM" tvg-name="Johor Fm" tvg-logo="https://mifntechnology.github.io/siaranMy/logo/JohorFm.png",Johor Fm
-https://mifntechnology.github.io/siaranMy/radio/JohorFm/playlist.m3u8
-
 #EXTINF:-1 group-title="radio" tvg-id="NASFM" tvg-name="NasionalFm" tvg-logo="https://mifntechnology.github.io/siaranMy/logo/NasionalFm.png",NasionalFm
 https://mifntechnology.github.io/siaranMy/radio/NasionalFm/playlist.m3u8
-
-#EXTINF:-1 group-title="radio" tvg-id="Klasik FM" tvg-name="Radio Klasik" tvg-logo="https://mifntechnology.github.io/siaranMy/logo/RadioKlasik.png",Radio Klasik
-https://mifntechnology.github.io/siaranMy/radio/RadioKlasik/playlist.m3u8
-
-#EXTINF:-1 group-title="radio" tvg-id="Sinar FM" tvg-name="SinarFm" tvg-logo="https://mifntechnology.github.io/siaranMy/logo/SinarFm.png",SinarFm
-https://mifntechnology.github.io/siaranMy/radio/SinarFm/playlist.m3u8
-
-#EXTINF:-1 group-title="radio" tvg-id="Suria FM" tvg-name="SuriaFm" tvg-logo="https://mifntechnology.github.io/siaranMy/logo/Suria.png",SuriaFm
-https://mifntechnology.github.io/siaranMy/radio/SuriaFm/playlist.m3u8
-
-#EXTINF:-1 group-title="radio" tvg-id="Ria FM" tvg-name="Ria897Fm" tvg-logo="https://mifntechnology.github.io/siaranMy/logo/RiaFm.png",Ria897Fm
-https://mifntechnology.github.io/siaranMy/radio/RiaFm/playlist.m3u8
-
-#EXTINF:-1 group-title="radio" tvg-id="Asyik FM" tvg-name="AsyikFm" tvg-logo="https://mifntechnology.github.io/siaranMy/logo/AsyikFm.png",AsyikFm
-https://mifntechnology.github.io/siaranMy/radio/AsyikFm/playlist.m3u8
 
