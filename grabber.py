@@ -3,25 +3,17 @@ import re
 import datetime
 
 def get_tonton_link(channel_id):
-    """Scraper yang lebih agresif untuk mencari pautan Tonton"""
+    """Mencuba mencuri pautan, jika gagal pulangkan None."""
     try:
         url = f"https://www.tonton.com.my/live-tv/{channel_id}"
-        headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
-            'Referer': 'https://www.tonton.com.my/'
-        }
-        response = requests.get(url, headers=headers, timeout=20)
-        
-        # Regex yang lebih luas untuk mencari master.m3u8
-        # Ia akan mencari pautan yang mengandungi 'live-ssar' dan berakhir dengan 'category=all' atau 'master.m3u8'
-        links = re.findall(r'(https://live-ssar-02\.tonton\.com\.my/[^"\'>]+\.m3u8[^"\'>]*)', response.text)
-        
-        if links:
-            # Ambil pautan pertama yang dijumpai
-            return links[0].replace('&amp;', '&')
-        return None
+        headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36'}
+        response = requests.get(url, headers=headers, timeout=10)
+        match = re.search(r'(https://live-ssar-02\.tonton\.com\.my/[^"\'>]+\.m3u8[^"\'>]*)', response.text)
+        if match:
+            return match.group(1).replace('&amp;', '&')
     except:
-        return None
+        pass
+    return None
 
 # 1. Header M3U
 m3u_content = '#EXTM3U x-tvg-url="https://raw.githubusercontent.com/AqFad2811/epg/main/epg.xml" url-tvg="https://raw.githubusercontent.com/AqFad2811/epg/main/compressed/epg.xml.gz" refresh="1440" max-conn="1"\n\n'
@@ -30,9 +22,16 @@ m3u_content = '#EXTM3U x-tvg-url="https://raw.githubusercontent.com/AqFad2811/ep
 tonton_ids = {"TV3": "tv3", "DidikTVKPM": "ntv7", "8TV": "8tv", "TV9": "tv9"}
 tonton_results = {}
 for name, webid in tonton_ids.items():
-    tonton_results[name] = get_tonton_link(webid)
+    link = get_tonton_link(webid)
+    # JIKA SCRAPING GAGAL, GUNA PAUTAN ALTERNATIF (PROXY)
+    if not link:
+        if webid == "tv3": link = "https://tonton-live.akamaized.net/hls/live/2043564/tv3/master.m3u8"
+        elif webid == "ntv7": link = "https://tonton-live.akamaized.net/hls/live/2043565/ntv7/master.m3u8"
+        elif webid == "8tv": link = "https://tonton-live.akamaized.net/hls/live/2043566/8tv/master.m3u8"
+        elif webid == "tv9": link = "https://tonton-live.akamaized.net/hls/live/2043567/tv9/master.m3u8"
+    tonton_results[name] = link
 
-# 3. Susunan Saluran Utama (Ikut permintaan anda)
+# 3. Susunan Saluran Utama (Kekal ikut permintaan anda)
 main_tv = [
     ("TV1", "https://mifntechnology.github.io/siaranMy/channels/Tv1/index.m3u8", "https://rtmklik.rtm.gov.my/", "TV1", "Tv1"),
     ("TV2", "https://mifntechnology.github.io/siaranMy/channels/Tv2/index.m3u8", "https://rtmklik.rtm.gov.my/", "TV2", "Tv2"),
@@ -47,14 +46,14 @@ main_tv = [
     ("Astro Awani", "https://mifntechnology.github.io/siaranMy/channels/AstroAwani/index.m3u8", "https://www.astroawani.com/", "AstroAwani", "AstroAwani")
 ]
 
-# Tambah Astro Awani (Pilihan AI), Berita RTM, Sukan RTM, Bernama
+# Tambah EXTRA TV
 extra_tv = [
     ("BERITA RTM", "https://mifntechnology.github.io/siaranMy/channels/BeritaRTM/index.m3u8", "https://rtmklik.rtm.gov.my/", "BERITARTM", "BeritaRtm"),
     ("SUKAN RTM", "https://mifntechnology.github.io/siaranMy/channels/SukanRTM/index.m3u8", "https://rtmklik.rtm.gov.my/", "TVSUKAN", "SukanRtm"),
     ("Bernama TV", "https://live.mana2.my/Bernama/index.m3u8?auth_key=1773142810-7e2c584028ce43f385da750b46bc4612-0-1153ee8a86d054b7174eda2d0975bec7", "https://www.mana2.my/", "BernamaTV", "Bernama")
 ]
 
-# Radio Channels (Penuh 13)
+# Radio (13 Saluran)
 radio_list = [
     ("Hot Fm", "HotFm", "Hot FM", "HotFm"), ("Best Fm", "BestFm", "Best FM", "bestfm"),
     ("Kool 101", "BuletinFm", "Kool FM", "Kool101"), ("Era", "Era", "ERA", "Era"),
@@ -65,9 +64,9 @@ radio_list = [
     ("AsyikFm", "AsyikFm", "Asyik FM", "AsyikFm")
 ]
 
-# Penulisan fail
+# Proses Penulisan
 for name, url, ref, tvgid, logo in (main_tv + extra_tv):
-    if url: # Jika pautan berjaya dijumpai
+    if url:
         m3u_content += f'#EXTINF:-1 group-title="siaranMy" tvg-id="{tvgid}" tvg-name="{tvgid}" tvg-logo="https://mifntechnology.github.io/siaranMy/logo/{logo}.png",{name}\n'
         m3u_content += f'#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36\n'
         m3u_content += f'#EXTVLCOPT:http-referrer={ref}\n{url}\n\n'
