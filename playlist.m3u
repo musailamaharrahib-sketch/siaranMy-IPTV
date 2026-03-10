@@ -1,39 +1,54 @@
 #EXTM3U x-tvg-url="https://raw.githubusercontent.com/AqFad2811/epg/main/epg.xml" url-tvg="https://raw.githubusercontent.com/AqFad2811/epg/main/compressed/epg.xml.gz" refresh="1440" max-conn="1"
 
 #EXTINF:-1 group-title="siaranMy" tvg-id="TV1" tvg-name="TV1" tvg-logo="https://mifntechnology.github.io/siaranMy/logo/Tv1.png",TV1
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://rtmklik.rtm.gov.my/
 https://mifntechnology.github.io/siaranMy/channels/Tv1/index.m3u8
 
 #EXTINF:-1 group-title="siaranMy" tvg-id="TV2" tvg-name="TV2" tvg-logo="https://mifntechnology.github.io/siaranMy/logo/Tv2.png",TV2
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://rtmklik.rtm.gov.my/
 https://mifntechnology.github.io/siaranMy/channels/Tv2/index.m3u8
 
 #EXTINF:-1 group-title="siaranMy" tvg-id="TVAlhijrah" tvg-name="TVAlhijrah" tvg-logo="https://mifntechnology.github.io/siaranMy/logo/TvAlhijrah.png",TV Alhijrah
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://www.mana2.my/
 https://live.mana2.my/TvAlhijrah/index.m3u8?auth_key=1773131819-45746f7d57b74f7da995f797a26668f3-0-2a031436c448dbaf06341eeb793ad26c
 
 #EXTINF:-1 group-title="siaranMy" tvg-id="OKEY" tvg-name="OKEY" tvg-logo="https://mifntechnology.github.io/siaranMy/logo/OkeyTv.png",Okey TV
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://rtmklik.rtm.gov.my/
 https://mifntechnology.github.io/siaranMy/channels/TvOkey/index.m3u8
 
 #EXTINF:-1 group-title="siaranMy" tvg-id="TV6" tvg-name="TV6" tvg-logo="https://mifntechnology.github.io/siaranMy/logo/Tv6.png",TV6
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://rtmklik.rtm.gov.my/
 https://mifntechnology.github.io/siaranMy/channels/Tv6/index.m3u8
 
 #EXTINF:-1 group-title="siaranMy" tvg-id="TVS" tvg-name="TVS" tvg-logo="https://mifntechnology.github.io/siaranMy/logo/Tvs.png",TVS
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://www.mana2.my/
 https://live.mana2.my/TvS/index.m3u8?auth_key=1773142589-d03dd30fb97d41bc9dc65d914d51013d-0-b25ce1dc03899973abd33fdb44577535
 
 #EXTINF:-1 group-title="siaranMy" tvg-id="AstroAwani" tvg-name="AstroAwani" tvg-logo="https://mifntechnology.github.io/siaranMy/logo/AstroAwani.png",Astro Awani
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://www.astroawani.com/
 https://mifntechnology.github.io/siaranMy/channels/AstroAwani/index.m3u8
+
+#EXTINF:-1 group-title="siaranMy" tvg-id="BERITARTM" tvg-name="BERITARTM" tvg-logo="https://mifntechnology.github.io/siaranMy/logo/BeritaRtm.png",BERITA RTM
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://rtmklik.rtm.gov.my/
+https://mifntechnology.github.io/siaranMy/channels/BeritaRTM/index.m3u8
+
+#EXTINF:-1 group-title="siaranMy" tvg-id="TVSUKAN" tvg-name="TVSUKAN" tvg-logo="https://mifntechnology.github.io/siaranMy/logo/SukanRtm.png",SUKAN RTM
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://rtmklik.rtm.gov.my/
+https://mifntechnology.github.io/siaranMy/channels/SukanRTM/index.m3u8
+
+#EXTINF:-1 group-title="siaranMy" tvg-id="BernamaTV" tvg-name="BernamaTV" tvg-logo="https://mifntechnology.github.io/siaranMy/logo/Bernama.png",Bernama TV
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://www.mana2.my/
+https://live.mana2.my/Bernama/index.m3u8?auth_key=1773142810-7e2c584028ce43f385da750b46bc4612-0-1153ee8a86d054b7174eda2d0975bec7
 
 #EXTINF:-1 group-title="radio" tvg-id="Hot FM" tvg-name="Hot Fm" tvg-logo="https://mifntechnology.github.io/siaranMy/logo/HotFm.png",Hot Fm
 https://mifntechnology.github.io/siaranMy/radio/HotFm/playlist.m3u8
