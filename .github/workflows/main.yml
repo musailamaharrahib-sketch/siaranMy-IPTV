@@ -1,0 +1,22 @@
+name: Auto Update IPTV
+on:
+  schedule:
+    - cron: '0 */2 * * *' # Setiap 2 jam
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - run: pip install requests
+      - run: python grabber.py
+      - name: Commit changes
+        run: |
+          git config --global user.name "Robot IPTV"
+          git config --global user.email "robot@github.com"
+          git add playlist.m3u
+          git commit -m "Auto Update" || exit 0
+          git push
