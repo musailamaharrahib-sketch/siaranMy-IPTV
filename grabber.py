@@ -2,55 +2,73 @@ import requests
 import re
 import datetime
 
-def get_tonton_link(channel_id, manual_link):
-    """Mencuri token Tonton. Jika gagal, guna pautan manual anda."""
+def get_live_link(target_url, regex_pattern):
+    """Mencuri pautan m3u8 secara automatik melalui jambatan proxy."""
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+        'X-Forwarded-For': '210.186.111.1' # IP Unifi Malaysia
+    }
     try:
-        url = f"https://www.tonton.com.my/live-tv/{channel_id}"
-        headers = {
-            'User-Agent': 'Mozilla/5.0 (Linux; Android 11; SM-G991B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Mobile Safari/537.36',
-            'Referer': 'https://www.tonton.com.my/'
-        }
-        response = requests.get(url, headers=headers, timeout=15)
-        match = re.search(r'(https://live-ssar-02\.tonton\.com\.my/[^"\'>]+\.m3u8[^"\'>]*)', response.text)
+        # Gunakan AllOrigins sebagai jambatan untuk tembus geo-block
+        proxy_bridge = f"https://api.allorigins.win/get?url={requests.utils.quote(target_url)}"
+        response = requests.get(proxy_bridge, timeout=20)
+        data = response.json()
+        html = data['contents']
+        
+        match = re.search(regex_pattern, html)
         if match:
             return match.group(1).replace('&amp;', '&')
     except:
         pass
-    return manual_link # Gunakan pautan yang anda beri jika robot gagal
-
-# Pautan manual anda (Sebagai backup)
-tv9_backup = "https://live-ssar-02.tonton.com.my/1773137950/bd28ffb014fa282c68db6f60fabec89dc8a64edf69f48c293a34758889950fc1/tv9/master.m3u8?bpkio_serviceid=6c0958d82a830a026ba9f8eeb79ede62&did=79b00b12-6a77-4424-5e76-2ced2d51e1ec&dnt=0&ifatype=sessionid&plt=web&lot_auds=&ttd_uid2=A4AAACx19Cup1dLf_pFtbHX1acGf13TYVWAVBcsIMaHgTbodVuMf5Lm43m0O3iDkk7XkkjcET_BQJV2D8mGQxi-GZRKdgZ-SRb-qVU1o0AiLvKMqUhcNbnY5ETKN_x31Sm1MneG2BLx3HBhXAfnyYaAVkS4DaceUAEyajynsw2jiD0jvI8_Jc7Zn6pEuZGjTAx1OqpAJa8J7EHHGa2uencSdQA&bpkio_sessionid=10f3b5b25-4d46b1cc-3b25-4ce4-b352-67f739876fef&category=all"
+    return None
 
 # 1. Header M3U
-m3u_content = '#EXTM3U x-tvg-url="https://raw.githubusercontent.com/AqFad2811/epg/main/epg.xml" url-tvg="https://raw.githubusercontent.com/AqFad2811/epg/main/compressed/epg.xml.gz" refresh="1440" max-conn="1"\n\n'
+m3u_header = '#EXTM3U x-tvg-url="https://raw.githubusercontent.com/AqFad2811/epg/main/epg.xml" url-tvg="https://raw.githubusercontent.com/AqFad2811/epg/main/compressed/epg.xml.gz" refresh="1440" max-conn="1"\n\n'
 
-# 2. Ambil token Tonton
-tv3_link = get_tonton_link("tv3", "https://mifntechnology.github.io/siaranMy/channels/Tv3/index.m3u8")
-tv9_link = get_tonton_link("tv9", tv9_backup)
+# 2. Corak Regex
+tonton_reg = r'(https://live-ssar-02\.tonton\.com\.my/[^"\'>]+\.m3u8[^"\'>]*)'
+mana2_reg = r'(https://live\.mana2\.my/[^"\'>]+\.m3u8[^"\'>]*)'
 
-# 3. Susunan Saluran
-channels = [
-    ("TV1", "https://mifntechnology.github.io/siaranMy/channels/Tv1/index.m3u8", "https://rtmklik.rtm.gov.my/", "TV1", "Tv1"),
-    ("TV2", "https://mifntechnology.github.io/siaranMy/channels/Tv2/index.m3u8", "https://rtmklik.rtm.gov.my/", "TV2", "Tv2"),
-    ("TV3", tv3_link, "https://www.tonton.com.my/", "TV3", "Tv3"),
-    ("TV Alhijrah", "https://live.mana2.my/TvAlhijrah/index.m3u8", "https://www.mana2.my/", "TVAlhijrah", "TvAlhijrah"),
-    ("Okey TV", "https://mifntechnology.github.io/siaranMy/channels/TvOkey/index.m3u8", "https://rtmklik.rtm.gov.my/", "OKEY", "OkeyTv"),
-    ("TV6", "https://mifntechnology.github.io/siaranMy/channels/Tv6/index.m3u8", "https://rtmklik.rtm.gov.my/", "TV6", "Tv6"),
-    ("TV9", tv9_link, "https://www.tonton.com.my/", "TV9", "Tv9"),
-    ("TVS", "https://live.mana2.my/TvS/index.m3u8", "https://www.mana2.my/", "TVS", "Tvs"),
-    ("Astro Awani", "https://mifntechnology.github.io/siaranMy/channels/AstroAwani/index.m3u8", "https://www.astroawani.com/", "AstroAwani", "AstroAwani")
+# 3. SENARAI SALURAN (Ikut Susunan Wajib Anda)
+channels_config = [
+    ("TV1", "https://mifntechnology.github.io/siaranMy/channels/Tv1/index.m3u8", "https://rtmklik.rtm.gov.my/", "TV1"),
+    ("TV2", "https://mifntechnology.github.io/siaranMy/channels/Tv2/index.m3u8", "https://rtmklik.rtm.gov.my/", "TV2"),
+    ("TV3", get_live_link("https://www.tonton.com.my/live-tv/tv3", tonton_reg), "https://www.tonton.com.my/", "TV3"),
+    ("TV Alhijrah", get_live_link("https://www.mana2.my/live/tv-alhijrah", mana2_reg), "https://www.mana2.my/", "TVAlhijrah"),
+    ("Okey TV", "https://mifntechnology.github.io/siaranMy/channels/TvOkey/index.m3u8", "https://rtmklik.rtm.gov.my/", "OKEY"),
+    ("TV6", "https://mifntechnology.github.io/siaranMy/channels/Tv6/index.m3u8", "https://rtmklik.rtm.gov.my/", "TV6"),
+    ("DidikTV KPM", get_live_link("https://www.tonton.com.my/live-tv/ntv7", tonton_reg), "https://www.tonton.com.my/", "DidikTVKPM"),
+    ("8TV", get_live_link("https://www.tonton.com.my/live-tv/8tv", tonton_reg), "https://www.tonton.com.my/", "8TV"),
+    ("TV9", get_live_link("https://www.tonton.com.my/live-tv/tv9", tonton_reg), "https://www.tonton.com.my/", "TV9"),
+    ("TVS", get_live_link("https://www.mana2.my/live/tvs", mana2_reg), "https://www.mana2.my/", "TVS"),
+    ("Astro Awani", "https://mifntechnology.github.io/siaranMy/channels/AstroAwani/index.m3u8", "https://www.astroawani.com/", "AstroAwani")
 ]
 
-# (Tambah Radio anda di sini seperti biasa)
-radio_list = [("Hot Fm", "HotFm", "Hot FM", "HotFm"), ("NasionalFm", "NasionalFm", "NASFM", "NasionalFm")]
+# 4. SENARAI RADIO (Penuh 13)
+radio_list = [
+    ("Hot Fm", "HotFm", "HotFm"), ("Best Fm", "BestFm", "bestfm"),
+    ("Kool 101", "BuletinFm", "Kool101"), ("Era", "Era", "Era"),
+    ("Fly Fm", "FlyFm", "FlyFm"), ("Hitz Fm", "HitzFm", "HitzFm"),
+    ("Johor Fm", "JohorFm", "JohorFm"), ("NasionalFm", "NasionalFm", "NasionalFm"),
+    ("Radio Klasik", "RadioKlasik", "RadioKlasik"), ("SinarFm", "SinarFm", "SinarFm"),
+    ("SuriaFm", "SuriaFm", "Suria"), ("Ria897Fm", "RiaFm", "RiaFm"),
+    ("AsyikFm", "AsyikFm", "AsyikFm")
+]
 
-# Penulisan fail
-for name, url, ref, tvgid, logo in channels:
-    m3u_content += f'#EXTINF:-1 group-title="siaranMy" tvg-id="{tvgid}" tvg-name="{tvgid}" tvg-logo="https://mifntechnology.github.io/siaranMy/logo/{logo}.png",{name}\n'
-    m3u_content += f'#EXTVLCOPT:http-user-agent=Mozilla/5.0\n#EXTVLCOPT:http-referrer={ref}\n{url}\n\n'
+# Bina Kandungan Fail
+full_m3u = m3u_header
 
-for name, folder, tvgid, logo in radio_list:
-    m3u_content += f'#EXTINF:-1 group-title="radio" tvg-id="{tvgid}" tvg-name="{name}" tvg-logo="https://mifntechnology.github.io/siaranMy/logo/{logo}.png",{name}\nhttps://mifntechnology.github.io/siaranMy/radio/{folder}/playlist.m3u8\n\n'
+for name, url, ref, tvgid in channels_config:
+    if not url: # Jika scrap gagal, guna backup github.io
+        url = f"https://mifntechnology.github.io/siaranMy/channels/{tvgid}/index.m3u8"
+        
+    logo = f"https://mifntechnology.github.io/siaranMy/logo/{tvgid}.png"
+    full_m3u += f'#EXTINF:-1 group-title="siaranMy" tvg-id="{tvgid}" tvg-name="{tvgid}" tvg-logo="{logo}",{name}\n'
+    full_m3u += f'#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36\n'
+    full_m3u += f'#EXTVLCOPT:http-referrer={ref}\n{url}\n\n'
+
+for name, folder, logo in radio_list:
+    full_m3u += f'#EXTINF:-1 group-title="radio" tvg-id="{name}" tvg-logo="https://mifntechnology.github.io/siaranMy/logo/{logo}.png",{name}\nhttps://mifntechnology.github.io/siaranMy/radio/{folder}/playlist.m3u8\n\n'
 
 with open("playlist.m3u", "w", encoding="utf-8") as f:
-    f.write(m3u_content)
+    f.write(full_m3u)
